@@ -26,4 +26,12 @@ pipeline {
     }
 
   }
+  
+  post {
+    success {
+        mail to: 'ishmammurtaza@gmail.com',
+             subject: "Passed Pipeline",
+             body: "Passed"
+    }
+}
 }
