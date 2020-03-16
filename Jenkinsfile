@@ -30,12 +30,6 @@ pipeline {
         emailext(subject: 'Build Passed', body: 'Passed', from: 'jenkins', to: 'ishmammurtaza@gmail.com')
       }
     }
-
-  }
-  post {
-    success {
-      mail(to: 'ishmammurtaza@gmail.com', subject: 'Passed Pipeline', body: 'Passed')
-    }
-
+    
   }
 }
