@@ -25,13 +25,11 @@ pipeline {
       }
     }
 
-  }
-  
-  post {
-    success {
-        mail to: 'ishmammurtaza@gmail.com',
-             subject: "Passed Pipeline",
-             body: "Passed"
+    stage('Email') {
+      steps {
+        emailext(subject: 'Build Passed!', body: 'Build Passed!', from: 'ishmammurtaza@gmail.com', to: 'ishmammurtaza@gmail.com')
+      }
     }
-}
+    
+  }
 }
